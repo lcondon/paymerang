@@ -25,7 +25,6 @@ class List extends React.Component {
   };
   componentDidMount() {
     API.getPayments().then(results => {
-      console.log(results);
       this.setState({ payments: results.data });
     });
   }

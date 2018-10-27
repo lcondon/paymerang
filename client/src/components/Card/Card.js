@@ -42,9 +42,14 @@ class Card extends React.Component {
             let Remittance = payment.Remittance;
             return (
               <div key={payment._id}>
-                <p>{payment.Payee.Name}</p>
+                <h1>{payment.Payee.Name}</h1>
                 <Divider />
-
+                <p>
+                  <strong>Fax:</strong> {payment.Payee.Fax}
+                </p>
+                <p>
+                  <strong>Phone:</strong> {payment.Payee.Phone}
+                </p>
                 <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
                   <li>{payment.Payee.Address.Address1}</li>
                   <li>
@@ -53,9 +58,34 @@ class Card extends React.Component {
                   </li>
                   <li>{payment.Payee.Address.PostalCode}</li>
                 </ul>
+                <h2>Payment</h2>
+                <p>
+                  <strong>PAN:</strong> {payment.Payment.PAN}
+                </p>
+                <p>
+                  <strong>CVV:</strong> {payment.Payment.CVV}
+                </p>
+                <p>
+                  <strong>Exp:</strong> {payment.Payment.Exp}
+                </p>
+                <h2>Remittance</h2>
                 {Remittance.map(Remittance => {
                   return (
-                    <p key={Remittance.PayorName}>{Remittance.PayorName}</p>
+                    <div key={Remittance.PayorName}>
+                      <h3>{Remittance.PayorName}</h3>
+                      <p>
+                        <strong>Payor Id:</strong> {Remittance.PayorId}
+                      </p>
+                      <p>
+                        <strong>Invoice Number:</strong> {Remittance.InvoiceNo}
+                      </p>
+                      <p>
+                        <strong>Description:</strong> {Remittance.Description}
+                      </p>
+                      <p>
+                        <strong>Amount:</strong> {Remittance.Amount}
+                      </p>
+                    </div>
                   );
                 })}
               </div>
