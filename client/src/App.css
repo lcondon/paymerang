@@ -9,6 +9,7 @@
 
 .App-header {
   background-color: #282c34;
+  background-image: linear-gradient(to right, #d6017a, #741f82);
   height: 400px;
   display: flex;
   flex-direction: column;
