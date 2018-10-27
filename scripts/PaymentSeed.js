@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const db = require('../models');
 
-mongoose.connect('mongodb://127.0.0.1/paymerang');
+mongoose.connect(
+  'mongodb://heroku_q809ch27:8vn3k20rffahk6c5ncc5de7jfj@ds143603.mlab.com:43603/heroku_q809ch27'
+);
 
 const paymentSeed = require('./generated.json');
 

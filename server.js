@@ -4,10 +4,10 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3001;
 const router = require('./routes');
 const logger = require('morgan');
-const dbConnection = require('./db');
-const db = require('./models');
 
 const app = express();
+
+require('./db');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
