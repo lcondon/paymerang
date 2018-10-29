@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import HomeIcon from '@material-ui/icons/Home';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
+import MaterialTable from 'material-table';
 
 const styles = theme => ({
   button: {
@@ -68,8 +69,18 @@ class Card extends React.Component {
                 <p>
                   <strong>Exp:</strong> {payment.Payment.Exp}
                 </p>
-                <h2>Remittance</h2>
-                {Remittance.map(Remittance => {
+                {/* <h2>Remittance</h2> */}
+                <MaterialTable
+                  columns={[
+                    { title: 'Name', field: 'PayorName' },
+                    { title: 'ID', field: 'PayorId' },
+                    { title: 'Invoice No.', field: 'InvoiceNo' },
+                    { title: 'Amount', field: 'Amount' }
+                  ]}
+                  data={Remittance}
+                  title="Remittance"
+                />
+                {/* {Remittance.map(Remittance => {
                   return (
                     <div key={Remittance.PayorName}>
                       <h3>{Remittance.PayorName}</h3>
@@ -87,16 +98,16 @@ class Card extends React.Component {
                       </p>
                     </div>
                   );
-                })}
+                })} */}
               </div>
             );
           })}
+          <Link to="/">
+            <Button variant="outlined" className={classes.button}>
+              <HomeIcon />
+            </Button>
+          </Link>
         </Paper>
-        <Link to="/">
-          <Button variant="outlined" className={classes.button}>
-            <HomeIcon />
-          </Button>
-        </Link>
       </div>
     );
   }
