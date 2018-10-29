@@ -69,7 +69,7 @@ class Card extends React.Component {
                 <p>
                   <strong>Exp:</strong> {payment.Payment.Exp}
                 </p>
-                {/* <h2>Remittance</h2> */}
+                <h2>Remittance</h2>
                 <MaterialTable
                   columns={[
                     { title: 'Name', field: 'PayorName' },
@@ -79,26 +79,12 @@ class Card extends React.Component {
                   ]}
                   data={Remittance}
                   title="Remittance"
+                  options={{
+                    paging: false,
+                    search: false,
+                    toolbar: false
+                  }}
                 />
-                {/* {Remittance.map(Remittance => {
-                  return (
-                    <div key={Remittance.PayorName}>
-                      <h3>{Remittance.PayorName}</h3>
-                      <p>
-                        <strong>Payor Id:</strong> {Remittance.PayorId}
-                      </p>
-                      <p>
-                        <strong>Invoice Number:</strong> {Remittance.InvoiceNo}
-                      </p>
-                      <p>
-                        <strong>Description:</strong> {Remittance.Description}
-                      </p>
-                      <p>
-                        <strong>Amount:</strong> {Remittance.Amount}
-                      </p>
-                    </div>
-                  );
-                })} */}
               </div>
             );
           })}
